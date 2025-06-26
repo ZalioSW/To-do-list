@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Add task</h1>
+    <div>Task name: <input id="taskName"></div>
+    <div>Task description: <input id="taskDesc"></div>
+    <button onclick="addTask()">Add task</button><br>
+    <a href="/">Back</a>
+
+    <script>
+
+        function addTask(){
+            const taskName = document.getElementById("taskName").value.trim();
+            const taskDesc = document.getElementById("taskDesc").value.trim();
+
+            $.ajax({
+                url: "/addTask",
+                type: "POST",
+                data:{
+                    taskName: taskName,
+                    taskDesc: taskDesc
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        window.location.href = "/";
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error: ", xhr.responseText);
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>

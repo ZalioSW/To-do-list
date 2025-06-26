@@ -21,12 +21,6 @@
             const password = document.getElementById("password").value.trim();
             const errorMessage = document.getElementById("error-message");
 
-            if (username === "" || password === ""){
-                errorMessage.textContent = "Username and password are necessary!";
-                errorMessage.style.display = "block";
-                return;
-            }
-
             $.ajax({
                 url: "/signup",
                 type: "POST",

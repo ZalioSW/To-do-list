@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Welcome to your To-do list {{username}}</h1>
+    {% if tasks %}
+        {% for task in tasks %}
+            <div>{{task[0]}} {{task[1]}}</div>
+        {% endfor %}
+    {% else %}
+        <div>No tasks yet...</div>
+    {% endif %}
+    <div>Add a task <a href="/addTask">here</a></div>
     <a href="/logout">Logout</a>
 </body>
 </html>
