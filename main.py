@@ -22,8 +22,7 @@ app.secret_key = "sw_the_goat123"
 def home_page():
     if 'username' not in session:
         return render_template("signup.html")
-    username = session['username']
-    return render_template("index.html", username=username)
+    return render_template("index.html", username=session['username'])
     
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
@@ -47,6 +46,7 @@ def login():
         kurzor.execute("SELECT Username, Password FROM uporabniki WHERE username = :username", {"username": username})
         row = kurzor.fetchone()
         if row and bcrypt.checkpw(password.encode("utf-8"), row[1]):
+            session['username'] = username
             return jsonify({"success": True})
         else:
             return jsonify({"success": False, "error": "Invalid username or password."})
