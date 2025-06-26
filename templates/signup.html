@@ -10,9 +10,10 @@
     <h1>Welcome to To-do list signup!</h1>
     <div id="error-message" style="color: red; display: none;"></div>
     <div>Username:<input id="username"></div>
-    <div>Email:<input id="email"></div>
-    <div>Password:<input id="password"></div>
-    <button onclick="signup()">Sign up</button>
+    <div>Email:<input id="email" type="email"></div>
+    <div>Password:<input id="password" type="password"></div>
+    <button onclick="signup()">Sign up</button><br>
+    <a href="/login">Login here</a>
     <script>
             function signup(){
             const username = document.getElementById("username").value.trim();
