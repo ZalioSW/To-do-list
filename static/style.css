@@ -1,0 +1,28 @@
+body {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+textarea {
+    height: 400px;
+    width: 500px;
+    resize: none;
+}
+
+input {
+    width: 500px;
+    height: 25px;
+}
+
+.task-name-desc{
+    font-size: x-large;
+}
+
+h1 {
+    color: blue;
+}

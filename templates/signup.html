@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do list signup</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style.css">
 </head>
 <body>
     <h1>Welcome to To-do list signup!</h1>
     <div id="error-message" style="color: red; display: none;"></div>
-    <div>Username:<input id="username"></div>
-    <div>Email:<input id="email" type="email"></div>
-    <div>Password:<input id="password" type="password"></div>
+    <div>Username:</div><br>
+    <input id="username"><br>
+    <div>Email:</div><br>
+    <input id="email" type="email"><br>
+    <div>Password:</div><br>
+    <input id="password" type="password"><br>
     <button onclick="signup()">Sign up</button><br>
     <a href="/login">Login here</a>
     <script>

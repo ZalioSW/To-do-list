@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do list</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style.css">
 </head>
 <body>
     <h1>Add task</h1>
-    <div>Task name: <input id="taskName"></div>
-    <div>Task description: <input id="taskDesc"></div>
+        <div class="task-name-desc">Task name:</div><br>
+        <input id="taskName"><br>
+        <div class="task-name-desc">Task description:</div><br>
+        <textarea id="taskDesc"></textarea><br>
     <button onclick="addTask()">Add task</button><br>
     <a href="/">Back</a>
 
