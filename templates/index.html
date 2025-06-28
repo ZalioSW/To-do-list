@@ -9,9 +9,18 @@
 <body>
     <h1>Welcome to your To-do list {{username}}</h1>
     {% if tasks %}
-        {% for task in tasks %}
-            <div>{{task[0]}} {{task[1]}}</div>
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Task name</th>
+                <th>Task description</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task[0] }}</td>
+                <td>{{ task[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     {% else %}
         <div>No tasks yet...</div>
     {% endif %}
