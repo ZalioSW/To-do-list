@@ -13,11 +13,13 @@
             <tr>
                 <th>Task name</th>
                 <th>Task description</th>
+                <th>Status</th>
             </tr>
             {% for task in tasks %}
-            <tr>
+            <tr id="raw">
                 <td>{{ task[0] }}</td>
                 <td>{{ task[1] }}</td>
+                <td><input type="checkbox" id="cek" onclick="lineWrite(this)"></td>
             </tr>
             {% endfor %}
         </table>
@@ -26,5 +28,12 @@
     {% endif %}
     <div>Add a task <a href="/addTask">here</a></div>
     <a href="/logout">Logout</a>
+
+    <script>
+        function lineWrite(checkbox) {
+            const row = checkbox.closest('tr');
+            row.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+        }
+    </script>
 </body>
 </html>

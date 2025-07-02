@@ -14,10 +14,6 @@ textarea {
     resize: none;
 }
 
-input {
-    width: 500px;
-    height: 25px;
-}
 
 .task-name-desc{
     font-size: x-large;
@@ -41,4 +37,20 @@ th {
 td, th {
     text-align: center;
     padding: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td:nth-child(1) {
+    width: 30%;
+}
+
+td:nth-child(2) {
+    width: 50%;
+}
+
+td:nth-child(3) {
+    width: 20%;
 }
